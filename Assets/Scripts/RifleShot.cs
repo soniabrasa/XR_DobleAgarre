@@ -19,18 +19,21 @@ public class RifleShot : MonoBehaviour
     }
 
 
-    void Update()
-    {
-    }
+    // void Update() { }
 
     public void Shot()
     {
+        // Bullet spawn
         Vector3 position = shotPoint.position;
         Quaternion rotation = shotPoint.rotation;
 
         GameObject bulletGo = Instantiate(bulletPrefab, position, rotation);
         totalBullets++;
         bulletGo.name = $"Bullet_{totalBullets}";
+
+        // Bullet action
+        Bullet bulletCs = bulletGo.GetComponent<Bullet>();
+        bulletCs.Shot();
 
         audioSource.PlayOneShot(shotClip);
     }

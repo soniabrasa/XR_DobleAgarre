@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // AddForce magnitude
+    float force;
+
+    // Time To Life
+    float ttl;
+
+
     void Start()
     {
-        
+        // Para ver despacio
+        force = 100f;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+    }
+
+    public void Shot()
+    {
+        Rigidbody rb = GetComponent<Rigidbody>();
+
+        // public void AddForce(Vector3 force, ForceMode mode = ForceMode.Force);
+        rb.AddForce(transform.forward * force, ForceMode.Impulse);
     }
 }
