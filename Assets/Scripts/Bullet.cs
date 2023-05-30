@@ -14,6 +14,9 @@ public class Bullet : MonoBehaviour
     void Awake()
     {
         shotForce = 20f;
+        ttl = 2f;
+
+        Destroy(gameObject, ttl);
     }
 
 
