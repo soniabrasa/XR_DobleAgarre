@@ -3524,6 +3524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetBallPrefab: {fileID: 6048287974906343971, guid: b524586b59dffcf49b3d067dfc0535bf, type: 3}
+  xSpawnBalls: {fileID: 1832466530381636427, guid: 9da494f145112a843b220c62a9d5d04c, type: 3}
 --- !u!4 &1911333728
 Transform:
   m_ObjectHideFlags: 0

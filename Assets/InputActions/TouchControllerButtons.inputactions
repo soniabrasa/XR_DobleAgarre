@@ -1,0 +1,34 @@
+{
+    "name": "ToucControllerButtons",
+    "maps": [
+        {
+            "name": "LeftHand",
+            "id": "4a364e1d-7d5b-4689-a763-309a10b9032c",
+            "actions": [
+                {
+                    "name": "SpawnBalls",
+                    "type": "Button",
+                    "id": "8a677945-3f51-45de-bd22-0963488ba92c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "362d66d4-bfe5-4e12-af62-40172c807f2f",
+                    "path": "<OculusTouchController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpawnBalls",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

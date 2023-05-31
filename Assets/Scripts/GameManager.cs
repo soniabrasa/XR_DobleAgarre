@@ -1,32 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject targetBallPrefab;
 
-    int totalPackage;
+    // Input Action Reference
+    public InputActionReference xSpawnBalls;
+
+    const int numBalls = 10;
     float radio;
 
 
     void Start()
     {
-        totalPackage = 10;
         radio = 10f;
 
-        SpawnTargetBalls();
+        SpawnBalls();
+
+        // Delegate InputAction TouchController LeftHand Button X
+        xSpawnBalls.action.performed += OnInputActionSpawnBalls;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
+    // Action Left Hand Controller On Touch X
+    // void OnInputActionSpawnBalls(InputAction.CallbackContext ctxt)
+    private void OnInputActionSpawnBalls(InputAction.CallbackContext ctxt)
+    {
+        Debug.Log("GameManager.OnInputActionSpawnBalls Left Hand Controller Touch X");
+        SpawnBalls(numBalls);
     }
 
-    void SpawnTargetBalls()
+    void SpawnBalls(int n = numBalls)
     {
-        for (int i = 0; i <= totalPackage; i++)
+        for (int i = 0; i <= n; i++)
         {
             float x = Random.Range(-1f, 1f) * radio;
             float y = 1f;
