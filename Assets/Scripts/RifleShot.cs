@@ -11,11 +11,17 @@ public class RifleShot : MonoBehaviour
     int totalBullets;
 
     AudioSource audioSource;
+    // Array de ParticleSystem en Rifle
+    ParticleSystem[] smokingGun;
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         totalBullets = 0;
+
+        audioSource = GetComponent<AudioSource>();
+
+        // Particle System's array inside GameObject
+        smokingGun = GetComponentsInChildren<ParticleSystem>();
     }
 
 
@@ -35,6 +41,13 @@ public class RifleShot : MonoBehaviour
         Bullet bulletCs = bulletGo.GetComponent<Bullet>();
         bulletCs.Shot();
 
+        // Audio Shot
         audioSource.PlayOneShot(shotClip);
+
+        // Particle System show
+        foreach (ParticleSystem smoke in smokingGun)
+        {
+            smoke.Play();
+        }
     }
 }
